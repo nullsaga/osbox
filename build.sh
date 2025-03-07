@@ -37,6 +37,19 @@ rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-google
 # Now let's install the packages.
 dnf -y install google-chrome-stable
 
+# Convince the installer we are in CI
+touch /.dockerenv
+
+# Make these so script will work
+mkdir -p /var/home
+mkdir -p /var/roothome
+
+# Brew Install Script
+curl --retry 3 -Lo /tmp/brew-install https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+chmod +x /tmp/brew-install
+/tmp/brew-install
+tar --zstd -cvf /usr/share/homebrew.tar.zst /home/linuxbrew/.linuxbrew
+
 # Clean up the yum repo (updates are baked into new images)
 rm /etc/yum.repos.d/google-chrome.repo -f
 
@@ -50,7 +63,7 @@ cat >/usr/lib/tmpfiles.d/google.conf <<EOF
 L  /opt/google  -  -  -  -  /usr/lib/google
 EOF
 
-dnf install -y tmux neovim fira-code-fonts golang distrobox make google-chrome-stable
+dnf install -y tmux neovim fira-code-fonts distrobox make google-chrome-stable
 
 # Use a COPR Example:
 #
