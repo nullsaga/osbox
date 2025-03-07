@@ -10,6 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
+dnf install dnf-plugins-core
 dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 dnf install -y tmux neovim fira-code-fonts golang distrobox make brave-browser
 
