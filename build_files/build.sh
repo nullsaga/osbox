@@ -11,8 +11,8 @@ set -ouex pipefail
 
 dnf install -y tmux neovim fira-code-fonts distrobox make
 
-/build_files/chrome.sh
-/build_files/brew.sh
+chrome.sh
+brew.sh
 
 # Use a COPR Example:
 #
