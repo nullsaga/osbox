@@ -9,10 +9,8 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-dnf install -y tmux neovim fira-code-fonts distrobox make
-
+dnf install -y tmux neovim fira-code-fonts distrobox make mesa-libGL-devel mesa-libGLES-devel libXrandr-devel libXcursor-devel libXinerama-devel libXi-devel libXxf86vm-devel alsa-lib-devel pkg-config
 /tmp/chrome.sh
-/tmp/brew.sh
 
 # Use a COPR Example:
 #
