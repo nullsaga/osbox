@@ -9,8 +9,9 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-dnf install -y tmux neovim fira-code-fonts distrobox make podman-compose
-/tmp/chrome.sh
+dnf install -y neovim fira-code-fonts distrobox make podman-compose
+
+/ctx/chrome.sh
 
 # Use a COPR Example:
 #
