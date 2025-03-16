@@ -12,7 +12,7 @@ set -ouex pipefail
 dnf install -y neovim fira-code-fonts distrobox make podman-compose
 
 /ctx/chrome.sh
-ctx/docker-ce.sh
+#/ctx/docker-ce.sh
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
@@ -23,4 +23,4 @@ ctx/docker-ce.sh
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-systemctl enable docker.socket
+#systemctl enable docker.socket
