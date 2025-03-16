@@ -15,7 +15,7 @@ gpgcheck=1
 gpgkey=https://dl.google.com/linux/linux_signing_key.pub
 EOF
 
-dnf -y install google-chrome-stable
+dnf install -y google-chrome-stable
 
 rm /etc/yum.repos.d/google-chrome.repo -f
 
